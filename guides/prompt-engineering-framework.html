@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The five-part prompt: a framework that works on any AI assistant | AiTrain</title>
+<meta name="description" content="Role, context, task, constraints and format — a repeatable prompt structure with before-and-after examples you can use with any AI assistant.">
+<link rel="canonical" href="https://aitrain.com/guides/prompt-engineering-framework.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="AiTrain">
+<meta property="og:title" content="The five-part prompt: a framework that works on any AI assistant | AiTrain"><meta property="og:description" content="Role, context, task, constraints and format — a repeatable prompt structure with before-and-after examples you can use with any AI assistant."><meta property="og:url" content="https://aitrain.com/guides/prompt-engineering-framework.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1652F0">
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The five-part prompt: a framework that works on any AI assistant", "description": "Role, context, task, constraints and format — a repeatable prompt structure with before-and-after examples you can use with any AI assistant.", "dateModified": "2026-10-16", "author": {"@type": "Organization", "name": "AiTrain editorial team"}, "publisher": {"@type": "Organization", "name": "AiTrain", "url": "https://aitrain.com"}, "mainEntityOfPage": "https://aitrain.com/guides/prompt-engineering-framework.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aitrain.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aitrain.com/guides.html"}, {"@type": "ListItem", "position": 3, "name": "The five-part prompt: a framework that works on any AI assistant", "item": "https://aitrain.com/guides/prompt-engineering-framework.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership — <a href="https://web.works/contact" rel="noopener" target="_blank">web.works/contact</a></div>
+<header class="site-head"><div class="wrap head-in" style="position:relative">
+<a class="brand" href="../index.html" aria-label="AiTrain home"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="../start-here.html">Start here</a><a href="../paths.html">Learning lines</a><a href="../guides.html" aria-current="page">Guides</a><a href="../tools.html">AI tools</a><a href="../prompts.html">Prompts</a><a href="../videos.html">Videos</a><a href="../contests.html">Contests</a><a href="../support.html">Support us</a><button class="theme-btn" type="button" aria-label="Switch light or dark theme">◐</button><a class="btn" href="../teams.html">Train your team</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap" style="padding-top:28px"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guides.html">Guides</a> / Prompt Craft</nav>
+<div class="layout-side"><article class="article">
+<span class="tag">Prompt Craft</span><span class="tag">9 min read</span><span class="tag">Updated October 2026</span>
+<h1 style="font-size:clamp(1.9rem,4vw,2.8rem)">The five-part prompt: a framework that works on any AI assistant</h1>
+<p class="lede">Role, context, task, constraints and format — a repeatable prompt structure with before-and-after examples you can use with any AI assistant.</p>
+<p class="muted" style="font-size:.92rem">By the AiTrain editorial team · Reviewed under our <a href="../editorial-standards.html">editorial standards</a></p>
+<p>Most disappointing AI answers come from instructions that leave the model guessing. The five-part prompt removes the guesswork. It works on every major assistant because it mirrors how you would brief a capable human colleague.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Good prompts answer five questions: <strong>who</strong> should the AI be, <strong>what background</strong> matters, <strong>what</strong> should it do, <strong>what rules</strong> apply, and <strong>what shape</strong> should the answer take.</li>
+<li>You do not need all five every time; add parts until the output is right.</li>
+<li>Format instructions are the cheapest way to get output you can use immediately.</li>
+</ul>
+<h2 id="the-five-parts">The five parts</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Question it answers</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role</td>
+<td>Who is doing the work?</td>
+<td>"Act as an experienced customer-support lead."</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>What does it need to know?</td>
+<td>"Our customers are small bakeries; the delivery was two days late because of a supplier issue."</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>What exactly should it produce?</td>
+<td>"Write a reply to the complaint below."</td>
+</tr>
+<tr>
+<td>Constraints</td>
+<td>What rules apply?</td>
+<td>"Under 120 words. Offer a 10% credit. Don't blame the supplier by name."</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>What should the output look like?</td>
+<td>"Subject line, then the email body. No sign-off; I'll add mine."</td>
+</tr>
+</tbody>
+</table>
+<h2 id="before-and-after">Before and after</h2>
+<p><strong>Before:</strong></p>
+<blockquote>
+<p>Write a reply to this angry customer.</p>
+</blockquote>
+<p>The result is generic, probably too long, and may promise things you cannot deliver.</p>
+<p><strong>After:</strong></p>
+<blockquote>
+<p>You are an experienced customer-support lead for a wholesale flour supplier. Our customers are small independent bakeries. This customer's delivery arrived two days late because a supplier missed a shipment; that has been fixed.
+Write a reply to the complaint below. Keep it under 120 words, apologise once (not repeatedly), offer a 10% credit on the next order, and do not name the supplier. Use a warm, direct tone.
+Format: a subject line, then the email body. No sign-off.
+Complaint: [paste]</p>
+</blockquote>
+<p>The second prompt takes 40 seconds longer to write and usually saves several rounds of editing.</p>
+<h2 id="part-by-part">Part by part</h2>
+<h3 id="role">Role</h3>
+<p>A role sets vocabulary, priorities and level of detail. "Explain this as a tax accountant" and "explain this as a primary-school teacher" give very different answers. Keep roles realistic and relevant.</p>
+<h3 id="context">Context</h3>
+<p>This is where most of the value is. The model knows nothing about your audience, history or goals. Two or three sentences of context typically beat any amount of clever wording. If you have source material, paste it and say so: "Use the policy text below."</p>
+<h3 id="task">Task</h3>
+<p>Use a clear verb: draft, summarise, compare, rewrite, extract, classify, critique. One main task per prompt works best; for bigger jobs see <a href="prompt-chaining-for-long-tasks.html">prompt chaining</a>.</p>
+<h3 id="constraints">Constraints</h3>
+<p>Length, tone, things to include, things to avoid, reading level, legal or brand rules. Positive instructions ("use plain English") tend to work better than only negative ones ("don't be complicated").</p>
+<h3 id="format">Format</h3>
+<p>Ask for exactly the shape you need: a table with named columns, a numbered checklist, three options labelled A/B/C, headings matching your template, or structured data. You will paste the result faster and spot gaps sooner.</p>
+<h2 id="a-reusable-template">A reusable template</h2>
+<pre><code>Role: You are a [role] helping [who].
+Context: [2–4 sentences of background]. Source material is below if relevant.
+Task: [verb] [what] for [audience/purpose].
+Constraints: [length], [tone], include [x], avoid [y].
+Format: [exact structure].
+If anything important is missing, ask me up to 3 questions before answering.
+</code></pre>
+<p>That last line is surprisingly powerful: it lets the model surface gaps instead of guessing.</p>
+<h2 id="practise-it">Practise it</h2>
+<p>Take three prompts you used this week and rewrite each with all five parts. Run both versions and compare. Then save the best ones to a shared <a href="build-a-team-prompt-library.html">prompt library</a> — or start from our <a href="../prompts.html">prompt library</a>, which uses this structure throughout.</p>
+<div class="ad-space" aria-hidden="true"></div>
+<div class="panel"><h3>Keep learning</h3><ul><li><a href="few-shot-prompting-examples.html">Few-shot prompting: show the AI what good looks like</a></li><li><a href="prompt-chaining-for-long-tasks.html">Prompt chaining: how to handle long or complex work with AI</a></li><li><a href="build-a-team-prompt-library.html">How to build a prompt library your team will actually use</a></li></ul><p style="margin:0"><a href="../guides.html">All guides</a> · <a href="../paths.html">Learning lines</a> · <a href="../prompts.html">Prompt library</a></p></div>
+</article>
+<aside class="side"><div class="panel toc"><h3>On this page</h3><a href="#key-takeaways">Key takeaways</a><a href="#the-five-parts">The five parts</a><a href="#before-and-after">Before and after</a><a href="#part-by-part">Part by part</a><a href="#a-reusable-template">A reusable template</a><a href="#practise-it">Practise it</a></div>
+<div class="panel" style="border:2px solid var(--ink)"><h3>Training a team?</h3>
+<p class="muted">Turn this topic into a hands-on session built around your team's real tasks. Quote within 2 business days.</p>
+<a class="btn" href="../teams.html?topic=The five-part prompt: a framework that works on any AI assistant">Get a team quote</a></div>
+<div class="panel"><h3>Weekly AI skill</h3><p class="muted">One practical technique by email each week.</p><a class="btn ghost" href="#nl-email">Subscribe</a></div>
+</aside></div></div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-grid">
+<div><a class="brand" href="../index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<p class="muted" style="margin-top:10px">Free, practical AI training for working people — and hands-on programmes for teams.</p>
+<form class="news" data-form="Newsletter" data-next="../thank-you.html" aria-label="Newsletter signup">
+<div class="hp"><input name="_hp" tabindex="-1" autocomplete="off"></div>
+<label class="skip" for="nl-email">Email</label><input id="nl-email" type="email" name="email" required placeholder="you@work.com"><input type="hidden" name="list" value="Weekly AI Skills email"><button class="btn" type="submit">Subscribe</button></form>
+<p class="muted" style="font-size:.85rem;margin-top:6px">One practical AI skill every week. Unsubscribe anytime.</p></div>
+<div><h4>Learn</h4><ul><li><a href="../start-here.html">Start here</a></li><li><a href="../paths.html">Learning lines</a></li><li><a href="../guides.html">Guides</a></li><li><a href="../videos.html">Video lessons</a></li><li><a href="../glossary.html">AI glossary</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="../tools.html">AI tools directory</a></li><li><a href="../prompts.html">Prompt library</a></li><li><a href="../ai-readiness-quiz.html">Team readiness check</a></li><li><a href="../roi-calculator.html">Training ROI calculator</a></li><li><a href="../contests.html">Contests</a></li></ul></div>
+<div><h4>Work with us</h4><ul><li><a href="../teams.html">Team training</a></li><li><a href="../advertise.html">Advertise & sponsor</a></li><li><a href="../support.html">Support / donate</a></li><li><a href="../careers.html">Careers & contributors</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+<div><h4>About</h4><ul><li><a href="../about.html">About AiTrain</a></li><li><a href="../editorial-standards.html">Editorial standards</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../cookies.html">Cookie policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="../trademark-copyright.html">Trademark & copyright</a></li></ul></div>
+</div>
+<div class="fine">© <span id="yr">2026</span> AiTrain.com. Original content; all rights reserved. AiTrain is an independent educational publication and is not affiliated with or endorsed by any AI company, transit operator or training provider named on this site. Third-party names are used for identification only. <a href="../trademark-copyright.html">Trademark &amp; copyright notice</a>. Interested in this domain, sponsorship, advertising or partnership? <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a>.</div>
+</div></footer>
+<div class="cookie" role="dialog" aria-label="Cookie choices"><b>Cookies on AiTrain.</b> We and our advertising partner Google use cookies to show ads, measure performance and remember your settings. See our <a href="../cookies.html">cookie policy</a>.
+<div class="btn-row"><button class="btn" data-consent="all">Accept all</button><button class="btn ghost" data-consent="essential">Essential only</button></div></div>
+<button class="btn ghost to-top" type="button" aria-label="Back to top">Top</button>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

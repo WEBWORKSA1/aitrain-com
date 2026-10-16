@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Few-shot prompting: show the AI what good looks like | AiTrain</title>
+<meta name="description" content="How giving one to three examples in your prompt locks in tone, structure and quality — with templates for product descriptions, data extraction and classification.">
+<link rel="canonical" href="https://aitrain.com/guides/few-shot-prompting-examples.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="AiTrain">
+<meta property="og:title" content="Few-shot prompting: show the AI what good looks like | AiTrain"><meta property="og:description" content="How giving one to three examples in your prompt locks in tone, structure and quality — with templates for product descriptions, data extraction and classification."><meta property="og:url" content="https://aitrain.com/guides/few-shot-prompting-examples.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1652F0">
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Few-shot prompting: show the AI what good looks like", "description": "How giving one to three examples in your prompt locks in tone, structure and quality — with templates for product descriptions, data extraction and classification.", "dateModified": "2026-10-16", "author": {"@type": "Organization", "name": "AiTrain editorial team"}, "publisher": {"@type": "Organization", "name": "AiTrain", "url": "https://aitrain.com"}, "mainEntityOfPage": "https://aitrain.com/guides/few-shot-prompting-examples.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aitrain.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aitrain.com/guides.html"}, {"@type": "ListItem", "position": 3, "name": "Few-shot prompting: show the AI what good looks like", "item": "https://aitrain.com/guides/few-shot-prompting-examples.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership — <a href="https://web.works/contact" rel="noopener" target="_blank">web.works/contact</a></div>
+<header class="site-head"><div class="wrap head-in" style="position:relative">
+<a class="brand" href="../index.html" aria-label="AiTrain home"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="../start-here.html">Start here</a><a href="../paths.html">Learning lines</a><a href="../guides.html" aria-current="page">Guides</a><a href="../tools.html">AI tools</a><a href="../prompts.html">Prompts</a><a href="../videos.html">Videos</a><a href="../contests.html">Contests</a><a href="../support.html">Support us</a><button class="theme-btn" type="button" aria-label="Switch light or dark theme">◐</button><a class="btn" href="../teams.html">Train your team</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap" style="padding-top:28px"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guides.html">Guides</a> / Prompt Craft</nav>
+<div class="layout-side"><article class="article">
+<span class="tag">Prompt Craft</span><span class="tag">7 min read</span><span class="tag">Updated October 2026</span>
+<h1 style="font-size:clamp(1.9rem,4vw,2.8rem)">Few-shot prompting: show the AI what good looks like</h1>
+<p class="lede">How giving one to three examples in your prompt locks in tone, structure and quality — with templates for product descriptions, data extraction and classification.</p>
+<p class="muted" style="font-size:.92rem">By the AiTrain editorial team · Reviewed under our <a href="../editorial-standards.html">editorial standards</a></p>
+<p>"Few-shot prompting" simply means including a few examples of the output you want inside your prompt. It is the most reliable way to get consistent tone and format, and it often works better than paragraphs of description.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Examples communicate style more precisely than adjectives like "punchy" or "professional".</li>
+<li>One to three good examples are usually enough.</li>
+<li>Make examples varied enough that the model learns the pattern, not the specific content.</li>
+<li>Clearly separate examples from the new input.</li>
+</ul>
+<h2 id="why-examples-work">Why examples work</h2>
+<p>Language models are pattern machines. If you describe the style you want, the model has to translate your description into a pattern. If you show the pattern, it can copy it directly. Telling someone "write it like our brand" is vague; handing them two past posts that nailed the brand voice is not.</p>
+<h2 id="template-1-product-descriptions">Template 1: product descriptions</h2>
+<pre><code>Write a product description in the same style as the examples.
+
+Example 1
+Product: Linen apron, natural colour
+Description: Stone-washed linen that softens with every wash. Deep front pocket, adjustable neck strap, and long ties that wrap to the front. Made to be used, not saved for best.
+
+Example 2
+Product: Walnut cutting board, large
+Description: One solid piece of oiled walnut, big enough for a whole loaf. Juice groove on one side, flat serving face on the other. Wipe clean, oil monthly, keep for decades.
+
+Now write one for:
+Product: Cast-iron skillet, 26 cm
+Description:
+</code></pre>
+<p>Notice what the examples teach without saying it: three short sentences, concrete materials, a practical detail, and a closing line with personality.</p>
+<h2 id="template-2-extracting-data">Template 2: extracting data</h2>
+<pre><code>Extract the company name, contact person and requested date from each message. Return one line per message as: company | person | date. Use &quot;unknown&quot; if missing.
+
+Message: &quot;Hi, this is Priya from Northfield Dental — could we book the workshop for 14 March?&quot;
+Output: Northfield Dental | Priya | 14 March
+
+Message: &quot;Hello, we'd like a quote for training our staff sometime in spring.&quot;
+Output: unknown | unknown | spring
+
+Message: [paste new message]
+Output:
+</code></pre>
+<p>The second example is important: it shows the model what to do when information is missing, which prevents it from inventing a company name.</p>
+<h2 id="template-3-classification">Template 3: classification</h2>
+<pre><code>Classify each support ticket as Billing, Technical, Account or Other.
+
+Ticket: &quot;I was charged twice this month.&quot; → Billing
+Ticket: &quot;The export button does nothing on Safari.&quot; → Technical
+Ticket: &quot;How do I add a second admin?&quot; → Account
+
+Ticket: [new ticket] →
+</code></pre>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Examples too similar.</strong> If every example is about shoes, the model may assume everything is about shoes.</li>
+<li><strong>One bad example.</strong> The model copies flaws as faithfully as strengths. Choose your best work.</li>
+<li><strong>No separator.</strong> Use labels like "Example 1", "Input", "Output" so the boundary is obvious.</li>
+<li><strong>Too many examples.</strong> Beyond a handful, you mostly add length. Increase only if quality is still inconsistent.</li>
+</ul>
+<h2 id="when-to-use-zero-examples">When to use zero examples</h2>
+<p>For one-off creative tasks where you want surprise, examples can limit the model. Start without them, and add examples once you know what you like.</p>
+<h2 id="next-step">Next step</h2>
+<p>Combine examples with the <a href="prompt-engineering-framework.html">five-part prompt</a> and save the result as a template your whole team can reuse.</p>
+<div class="ad-space" aria-hidden="true"></div>
+<div class="panel"><h3>Keep learning</h3><ul><li><a href="prompt-engineering-framework.html">The five-part prompt: a framework that works on any AI assistant</a></li><li><a href="prompt-chaining-for-long-tasks.html">Prompt chaining: how to handle long or complex work with AI</a></li><li><a href="build-a-team-prompt-library.html">How to build a prompt library your team will actually use</a></li></ul><p style="margin:0"><a href="../guides.html">All guides</a> · <a href="../paths.html">Learning lines</a> · <a href="../prompts.html">Prompt library</a></p></div>
+</article>
+<aside class="side"><div class="panel toc"><h3>On this page</h3><a href="#key-takeaways">Key takeaways</a><a href="#why-examples-work">Why examples work</a><a href="#template-1-product-descriptions">Template 1: product descriptions</a><a href="#template-2-extracting-data">Template 2: extracting data</a><a href="#template-3-classification">Template 3: classification</a><a href="#common-mistakes">Common mistakes</a><a href="#when-to-use-zero-examples">When to use zero examples</a><a href="#next-step">Next step</a></div>
+<div class="panel" style="border:2px solid var(--ink)"><h3>Training a team?</h3>
+<p class="muted">Turn this topic into a hands-on session built around your team's real tasks. Quote within 2 business days.</p>
+<a class="btn" href="../teams.html?topic=Few-shot prompting: show the AI what good looks like">Get a team quote</a></div>
+<div class="panel"><h3>Weekly AI skill</h3><p class="muted">One practical technique by email each week.</p><a class="btn ghost" href="#nl-email">Subscribe</a></div>
+</aside></div></div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-grid">
+<div><a class="brand" href="../index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<p class="muted" style="margin-top:10px">Free, practical AI training for working people — and hands-on programmes for teams.</p>
+<form class="news" data-form="Newsletter" data-next="../thank-you.html" aria-label="Newsletter signup">
+<div class="hp"><input name="_hp" tabindex="-1" autocomplete="off"></div>
+<label class="skip" for="nl-email">Email</label><input id="nl-email" type="email" name="email" required placeholder="you@work.com"><input type="hidden" name="list" value="Weekly AI Skills email"><button class="btn" type="submit">Subscribe</button></form>
+<p class="muted" style="font-size:.85rem;margin-top:6px">One practical AI skill every week. Unsubscribe anytime.</p></div>
+<div><h4>Learn</h4><ul><li><a href="../start-here.html">Start here</a></li><li><a href="../paths.html">Learning lines</a></li><li><a href="../guides.html">Guides</a></li><li><a href="../videos.html">Video lessons</a></li><li><a href="../glossary.html">AI glossary</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="../tools.html">AI tools directory</a></li><li><a href="../prompts.html">Prompt library</a></li><li><a href="../ai-readiness-quiz.html">Team readiness check</a></li><li><a href="../roi-calculator.html">Training ROI calculator</a></li><li><a href="../contests.html">Contests</a></li></ul></div>
+<div><h4>Work with us</h4><ul><li><a href="../teams.html">Team training</a></li><li><a href="../advertise.html">Advertise & sponsor</a></li><li><a href="../support.html">Support / donate</a></li><li><a href="../careers.html">Careers & contributors</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+<div><h4>About</h4><ul><li><a href="../about.html">About AiTrain</a></li><li><a href="../editorial-standards.html">Editorial standards</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../cookies.html">Cookie policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="../trademark-copyright.html">Trademark & copyright</a></li></ul></div>
+</div>
+<div class="fine">© <span id="yr">2026</span> AiTrain.com. Original content; all rights reserved. AiTrain is an independent educational publication and is not affiliated with or endorsed by any AI company, transit operator or training provider named on this site. Third-party names are used for identification only. <a href="../trademark-copyright.html">Trademark &amp; copyright notice</a>. Interested in this domain, sponsorship, advertising or partnership? <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a>.</div>
+</div></footer>
+<div class="cookie" role="dialog" aria-label="Cookie choices"><b>Cookies on AiTrain.</b> We and our advertising partner Google use cookies to show ads, measure performance and remember your settings. See our <a href="../cookies.html">cookie policy</a>.
+<div class="btn-row"><button class="btn" data-consent="all">Accept all</button><button class="btn ghost" data-consent="essential">Essential only</button></div></div>
+<button class="btn ghost to-top" type="button" aria-label="Back to top">Top</button>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

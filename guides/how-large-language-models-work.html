@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How large language models work: tokens, training and prediction | AiTrain</title>
+<meta name="description" content="A clear explanation of large language models — tokens, next-word prediction, training, fine-tuning and context windows — and what each means for everyday use.">
+<link rel="canonical" href="https://aitrain.com/guides/how-large-language-models-work.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="AiTrain">
+<meta property="og:title" content="How large language models work: tokens, training and prediction | AiTrain"><meta property="og:description" content="A clear explanation of large language models — tokens, next-word prediction, training, fine-tuning and context windows — and what each means for everyday use."><meta property="og:url" content="https://aitrain.com/guides/how-large-language-models-work.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1652F0">
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How large language models work: tokens, training and prediction", "description": "A clear explanation of large language models — tokens, next-word prediction, training, fine-tuning and context windows — and what each means for everyday use.", "dateModified": "2026-10-16", "author": {"@type": "Organization", "name": "AiTrain editorial team"}, "publisher": {"@type": "Organization", "name": "AiTrain", "url": "https://aitrain.com"}, "mainEntityOfPage": "https://aitrain.com/guides/how-large-language-models-work.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aitrain.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aitrain.com/guides.html"}, {"@type": "ListItem", "position": 3, "name": "How large language models work: tokens, training and prediction", "item": "https://aitrain.com/guides/how-large-language-models-work.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership — <a href="https://web.works/contact" rel="noopener" target="_blank">web.works/contact</a></div>
+<header class="site-head"><div class="wrap head-in" style="position:relative">
+<a class="brand" href="../index.html" aria-label="AiTrain home"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="../start-here.html">Start here</a><a href="../paths.html">Learning lines</a><a href="../guides.html" aria-current="page">Guides</a><a href="../tools.html">AI tools</a><a href="../prompts.html">Prompts</a><a href="../videos.html">Videos</a><a href="../contests.html">Contests</a><a href="../support.html">Support us</a><button class="theme-btn" type="button" aria-label="Switch light or dark theme">◐</button><a class="btn" href="../teams.html">Train your team</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap" style="padding-top:28px"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guides.html">Guides</a> / Foundations</nav>
+<div class="layout-side"><article class="article">
+<span class="tag">Foundations</span><span class="tag">10 min read</span><span class="tag">Updated October 2026</span>
+<h1 style="font-size:clamp(1.9rem,4vw,2.8rem)">How large language models work: tokens, training and prediction</h1>
+<p class="lede">A clear explanation of large language models — tokens, next-word prediction, training, fine-tuning and context windows — and what each means for everyday use.</p>
+<p class="muted" style="font-size:.92rem">By the AiTrain editorial team · Reviewed under our <a href="../editorial-standards.html">editorial standards</a></p>
+<p>Large language models (LLMs) power most of today's AI assistants. Understanding roughly how they work is not just trivia: it explains why they are brilliant at some tasks, unreliable at others, and why the way you phrase a request changes the answer so much.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>An LLM reads and writes in <strong>tokens</strong> — chunks of words.</li>
+<li>At its core it repeatedly predicts the <strong>next token</strong> given everything before it.</li>
+<li>It learns patterns from huge amounts of text during <strong>pre-training</strong>, then is shaped into a helpful assistant through <strong>fine-tuning</strong> and human feedback.</li>
+<li>Everything it can "see" in a conversation must fit inside its <strong>context window</strong>.</li>
+</ul>
+<h2 id="step-1-text-becomes-tokens">Step 1: text becomes tokens</h2>
+<p>Computers work with numbers, so text is first split into tokens. A token is often a whole common word, part of a longer word, or a punctuation mark. "Training" might be one token; an unusual surname might be three or four. As a rough rule for English, 100 tokens is about 75 words.</p>
+<p>Why it matters: limits and prices for AI services are usually counted in tokens, and very long documents may need to be split.</p>
+<h2 id="step-2-predicting-the-next-token">Step 2: predicting the next token</h2>
+<p>Give the model the text "The capital of France is" and it calculates a probability for every possible next token. "Paris" gets a very high probability, so it is likely to be chosen. The model then adds "Paris" to the text and predicts again, one token at a time, until it decides the answer is complete.</p>
+<p>That is the whole trick, repeated extremely fast. The surprising part is how much ability emerges from it. To predict the next word in a legal contract, a recipe or a Python file well, the model has to absorb a great deal about grammar, facts, reasoning patterns and style.</p>
+<h3 id="a-pencil-and-paper-version">A pencil-and-paper version</h3>
+<p>Try this with a colleague. Write: "Thank you for your email. Unfortunately, we are unable to…" Ask them to guess the next three words. Most people write something like "accept your request" or "process your order". They are not looking anything up — they are drawing on patterns from every polite rejection they have ever read. An LLM does the same thing, with patterns from far more text.</p>
+<h2 id="step-3-pre-training">Step 3: pre-training</h2>
+<p>During pre-training, the model reads a vast collection of text and practises predicting the next token billions of times. Each time it is wrong, its internal settings (called <strong>parameters</strong> or <strong>weights</strong>) are nudged slightly to make the right answer more likely next time. The method behind those nudges is called gradient descent; the <a href="../paths/build-with-ai.html">Build with AI Line</a> has visual videos that show it beautifully.</p>
+<p>After pre-training, the model is a powerful text predictor but not yet a helpful assistant. Ask it a question and it might continue with three more questions, because that is a common pattern on the internet.</p>
+<h2 id="step-4-fine-tuning-into-an-assistant">Step 4: fine-tuning into an assistant</h2>
+<p>Developers then train the model further on examples of good conversations, and use human ratings to reward answers that are helpful, honest and harmless. This stage teaches the model to follow instructions, answer in a useful format, and decline clearly harmful requests.</p>
+<h2 id="step-5-the-context-window">Step 5: the context window</h2>
+<p>When you chat, the model does not remember you the way a person does. Each time it answers, it is given the conversation so far — your messages, its replies, and any documents you pasted — up to a maximum size called the <strong>context window</strong>. Anything outside that window is invisible to it.</p>
+<p>Practical consequences:</p>
+<ul>
+<li>In a very long chat, early instructions can lose influence. Restate important constraints.</li>
+<li>Paste the actual source material when you want answers based on it.</li>
+<li>Start a fresh conversation for an unrelated task, so old context does not leak in.</li>
+</ul>
+<h2 id="why-answers-vary">Why answers vary</h2>
+<p>Most assistants add a little randomness when choosing tokens, so the same prompt can produce different wording each time. That is useful for brainstorming and less useful when you need consistency. Clear formats and examples reduce variation a lot — see <a href="few-shot-prompting-examples.html">few-shot prompting</a>.</p>
+<h2 id="why-it-can-be-confidently-wrong">Why it can be confidently wrong</h2>
+<p>The model is optimised to produce plausible text. Most of the time plausible and true overlap. When they don't — an obscure fact, a recent event, a specific statistic — it can produce something that reads perfectly and is simply invented. Tools that connect the model to search or to your own documents (see <a href="retrieval-augmented-generation-explained.html">retrieval-augmented generation</a>) reduce this, but checking still matters.</p>
+<h2 id="summary-table">Summary table</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>One-line meaning</th>
+<th>What you should do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Token</td>
+<td>A chunk of text the model reads</td>
+<td>Expect limits counted in tokens</td>
+</tr>
+<tr>
+<td>Next-token prediction</td>
+<td>Writes one piece at a time</td>
+<td>Give a clear start and format</td>
+</tr>
+<tr>
+<td>Pre-training</td>
+<td>Learns patterns from huge text</td>
+<td>Assume broad but imperfect knowledge</td>
+</tr>
+<tr>
+<td>Fine-tuning</td>
+<td>Learns to be an assistant</td>
+<td>Give instructions directly</td>
+</tr>
+<tr>
+<td>Context window</td>
+<td>What it can see right now</td>
+<td>Paste sources; restate key rules</td>
+</tr>
+</tbody>
+</table>
+<div class="ad-space" aria-hidden="true"></div>
+<div class="panel"><h3>Keep learning</h3><ul><li><a href="what-is-generative-ai.html">What is generative AI? A plain-English guide for working people</a></li><li><a href="ai-hallucinations-how-to-catch-them.html">AI hallucinations: a five-question habit for catching errors</a></li><li><a href="how-to-choose-an-ai-assistant.html">How to choose an AI assistant for work: a buyer&#x27;s checklist</a></li></ul><p style="margin:0"><a href="../guides.html">All guides</a> · <a href="../paths.html">Learning lines</a> · <a href="../prompts.html">Prompt library</a></p></div>
+</article>
+<aside class="side"><div class="panel toc"><h3>On this page</h3><a href="#key-takeaways">Key takeaways</a><a href="#step-1-text-becomes-tokens">Step 1: text becomes tokens</a><a href="#step-2-predicting-the-next-token">Step 2: predicting the next token</a><a href="#step-3-pre-training">Step 3: pre-training</a><a href="#step-4-fine-tuning-into-an-assistant">Step 4: fine-tuning into an assistant</a><a href="#step-5-the-context-window">Step 5: the context window</a><a href="#why-answers-vary">Why answers vary</a><a href="#why-it-can-be-confidently-wrong">Why it can be confidently wrong</a><a href="#summary-table">Summary table</a></div>
+<div class="panel" style="border:2px solid var(--ink)"><h3>Training a team?</h3>
+<p class="muted">Turn this topic into a hands-on session built around your team's real tasks. Quote within 2 business days.</p>
+<a class="btn" href="../teams.html?topic=How large language models work: tokens, training and prediction">Get a team quote</a></div>
+<div class="panel"><h3>Weekly AI skill</h3><p class="muted">One practical technique by email each week.</p><a class="btn ghost" href="#nl-email">Subscribe</a></div>
+</aside></div></div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-grid">
+<div><a class="brand" href="../index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<p class="muted" style="margin-top:10px">Free, practical AI training for working people — and hands-on programmes for teams.</p>
+<form class="news" data-form="Newsletter" data-next="../thank-you.html" aria-label="Newsletter signup">
+<div class="hp"><input name="_hp" tabindex="-1" autocomplete="off"></div>
+<label class="skip" for="nl-email">Email</label><input id="nl-email" type="email" name="email" required placeholder="you@work.com"><input type="hidden" name="list" value="Weekly AI Skills email"><button class="btn" type="submit">Subscribe</button></form>
+<p class="muted" style="font-size:.85rem;margin-top:6px">One practical AI skill every week. Unsubscribe anytime.</p></div>
+<div><h4>Learn</h4><ul><li><a href="../start-here.html">Start here</a></li><li><a href="../paths.html">Learning lines</a></li><li><a href="../guides.html">Guides</a></li><li><a href="../videos.html">Video lessons</a></li><li><a href="../glossary.html">AI glossary</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="../tools.html">AI tools directory</a></li><li><a href="../prompts.html">Prompt library</a></li><li><a href="../ai-readiness-quiz.html">Team readiness check</a></li><li><a href="../roi-calculator.html">Training ROI calculator</a></li><li><a href="../contests.html">Contests</a></li></ul></div>
+<div><h4>Work with us</h4><ul><li><a href="../teams.html">Team training</a></li><li><a href="../advertise.html">Advertise & sponsor</a></li><li><a href="../support.html">Support / donate</a></li><li><a href="../careers.html">Careers & contributors</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+<div><h4>About</h4><ul><li><a href="../about.html">About AiTrain</a></li><li><a href="../editorial-standards.html">Editorial standards</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../cookies.html">Cookie policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="../trademark-copyright.html">Trademark & copyright</a></li></ul></div>
+</div>
+<div class="fine">© <span id="yr">2026</span> AiTrain.com. Original content; all rights reserved. AiTrain is an independent educational publication and is not affiliated with or endorsed by any AI company, transit operator or training provider named on this site. Third-party names are used for identification only. <a href="../trademark-copyright.html">Trademark &amp; copyright notice</a>. Interested in this domain, sponsorship, advertising or partnership? <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a>.</div>
+</div></footer>
+<div class="cookie" role="dialog" aria-label="Cookie choices"><b>Cookies on AiTrain.</b> We and our advertising partner Google use cookies to show ads, measure performance and remember your settings. See our <a href="../cookies.html">cookie policy</a>.
+<div class="btn-row"><button class="btn" data-consent="all">Accept all</button><button class="btn ghost" data-consent="essential">Essential only</button></div></div>
+<button class="btn ghost to-top" type="button" aria-label="Back to top">Top</button>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

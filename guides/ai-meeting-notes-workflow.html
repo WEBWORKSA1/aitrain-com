@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An AI meeting-notes workflow that people actually read | AiTrain</title>
+<meta name="description" content="Turn recordings or transcripts into decisions, owners and deadlines — plus consent, accuracy and storage rules for AI meeting notes.">
+<link rel="canonical" href="https://aitrain.com/guides/ai-meeting-notes-workflow.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="AiTrain">
+<meta property="og:title" content="An AI meeting-notes workflow that people actually read | AiTrain"><meta property="og:description" content="Turn recordings or transcripts into decisions, owners and deadlines — plus consent, accuracy and storage rules for AI meeting notes."><meta property="og:url" content="https://aitrain.com/guides/ai-meeting-notes-workflow.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1652F0">
+<meta name="google-adsense-account" content="ca-pub-6620975821265271">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "An AI meeting-notes workflow that people actually read", "description": "Turn recordings or transcripts into decisions, owners and deadlines — plus consent, accuracy and storage rules for AI meeting notes.", "dateModified": "2026-10-16", "author": {"@type": "Organization", "name": "AiTrain editorial team"}, "publisher": {"@type": "Organization", "name": "AiTrain", "url": "https://aitrain.com"}, "mainEntityOfPage": "https://aitrain.com/guides/ai-meeting-notes-workflow.html"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aitrain.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://aitrain.com/guides.html"}, {"@type": "ListItem", "position": 3, "name": "An AI meeting-notes workflow that people actually read", "item": "https://aitrain.com/guides/ai-meeting-notes-workflow.html"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership — <a href="https://web.works/contact" rel="noopener" target="_blank">web.works/contact</a></div>
+<header class="site-head"><div class="wrap head-in" style="position:relative">
+<a class="brand" href="../index.html" aria-label="AiTrain home"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav class="nav" id="nav" aria-label="Main"><a href="../start-here.html">Start here</a><a href="../paths.html">Learning lines</a><a href="../guides.html" aria-current="page">Guides</a><a href="../tools.html">AI tools</a><a href="../prompts.html">Prompts</a><a href="../videos.html">Videos</a><a href="../contests.html">Contests</a><a href="../support.html">Support us</a><button class="theme-btn" type="button" aria-label="Switch light or dark theme">◐</button><a class="btn" href="../teams.html">Train your team</a></nav>
+</div></header>
+<main id="main">
+<div class="wrap" style="padding-top:28px"><nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../guides.html">Guides</a> / Workflow Automation</nav>
+<div class="layout-side"><article class="article">
+<span class="tag">Workflow Automation</span><span class="tag">6 min read</span><span class="tag">Updated October 2026</span>
+<h1 style="font-size:clamp(1.9rem,4vw,2.8rem)">An AI meeting-notes workflow that people actually read</h1>
+<p class="lede">Turn recordings or transcripts into decisions, owners and deadlines — plus consent, accuracy and storage rules for AI meeting notes.</p>
+<p class="muted" style="font-size:.92rem">By the AiTrain editorial team · Reviewed under our <a href="../editorial-standards.html">editorial standards</a></p>
+<p>AI transcription and summarising can remove one of the most tedious jobs in office life. But a raw summary that nobody reads saves nothing. This workflow produces short notes centred on what people need to do.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>Get consent before recording, every time.</li>
+<li>Ask for decisions, action items, owners and deadlines — not a narrative of who said what.</li>
+<li>A person who attended should check the notes before they are sent.</li>
+<li>Store notes where the team already looks.</li>
+</ul>
+<h2 id="step-1-consent-and-setup">Step 1: consent and setup</h2>
+<p>Tell participants at the start that the meeting is being recorded and transcribed, and why. Laws and workplace rules on recording vary; follow your organisation's policy. For sensitive topics — HR matters, health, legal advice — consider not recording at all.</p>
+<h2 id="step-2-the-summary-prompt">Step 2: the summary prompt</h2>
+<pre><code>Below is a meeting transcript. Produce:
+1. Decisions made (bullet list; only items explicitly agreed).
+2. Action items as a table: task | owner | due date (&quot;not set&quot; if none was stated).
+3. Open questions that were raised but not resolved.
+4. A three-sentence summary for people who missed the meeting.
+Do not include anything not supported by the transcript. If ownership is unclear, write &quot;unclear&quot;.
+Transcript: [paste]
+</code></pre>
+<p>Asking for "unclear" instead of a guess prevents the most common error: the AI assigning a task to the wrong person.</p>
+<h2 id="step-3-human-check">Step 3: human check</h2>
+<p>The meeting organiser or a note-taker spends two minutes reviewing: Are the decisions right? Are the owners right? Anything sensitive that should not go to the whole list?</p>
+<h2 id="step-4-distribute-and-track">Step 4: distribute and track</h2>
+<p>Send the notes within an hour while the meeting is fresh. Copy action items into your task tracker so they don't live only in an email.</p>
+<h2 id="retention">Retention</h2>
+<p>Transcripts can contain sensitive remarks. Keep the summary and delete the full recording when it is no longer needed, in line with your organisation's retention policy.</p>
+<h2 id="results-to-expect">Results to expect</h2>
+<p>Teams that adopt this typically cut note-taking time to a few minutes per meeting and, more importantly, see fewer forgotten action items. Add it to your <a href="automate-repetitive-work-with-ai.html">automation plan</a> once the prompt is stable.</p>
+<div class="ad-space" aria-hidden="true"></div>
+<div class="panel"><h3>Keep learning</h3><ul><li><a href="automate-repetitive-work-with-ai.html">Automate repetitive work with AI: a step-by-step method</a></li><li><a href="ai-for-spreadsheets.html">Using AI with spreadsheets: formulas, cleaning and summaries</a></li></ul><p style="margin:0"><a href="../guides.html">All guides</a> · <a href="../paths.html">Learning lines</a> · <a href="../prompts.html">Prompt library</a></p></div>
+</article>
+<aside class="side"><div class="panel toc"><h3>On this page</h3><a href="#key-takeaways">Key takeaways</a><a href="#step-1-consent-and-setup">Step 1: consent and setup</a><a href="#step-2-the-summary-prompt">Step 2: the summary prompt</a><a href="#step-3-human-check">Step 3: human check</a><a href="#step-4-distribute-and-track">Step 4: distribute and track</a><a href="#retention">Retention</a><a href="#results-to-expect">Results to expect</a></div>
+<div class="panel" style="border:2px solid var(--ink)"><h3>Training a team?</h3>
+<p class="muted">Turn this topic into a hands-on session built around your team's real tasks. Quote within 2 business days.</p>
+<a class="btn" href="../teams.html?topic=An AI meeting-notes workflow that people actually read">Get a team quote</a></div>
+<div class="panel"><h3>Weekly AI skill</h3><p class="muted">One practical technique by email each week.</p><a class="btn ghost" href="#nl-email">Subscribe</a></div>
+</aside></div></div>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-grid">
+<div><a class="brand" href="../index.html"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="13" width="32" height="8" rx="4" fill="#1652F0"/><circle cx="9" cy="17" r="6" fill="#fff" stroke="#E4002B" stroke-width="3.5"/><circle cx="25" cy="17" r="6" fill="#fff" stroke="#00A86B" stroke-width="3.5"/></svg><span>AiTrain</span></a>
+<p class="muted" style="margin-top:10px">Free, practical AI training for working people — and hands-on programmes for teams.</p>
+<form class="news" data-form="Newsletter" data-next="../thank-you.html" aria-label="Newsletter signup">
+<div class="hp"><input name="_hp" tabindex="-1" autocomplete="off"></div>
+<label class="skip" for="nl-email">Email</label><input id="nl-email" type="email" name="email" required placeholder="you@work.com"><input type="hidden" name="list" value="Weekly AI Skills email"><button class="btn" type="submit">Subscribe</button></form>
+<p class="muted" style="font-size:.85rem;margin-top:6px">One practical AI skill every week. Unsubscribe anytime.</p></div>
+<div><h4>Learn</h4><ul><li><a href="../start-here.html">Start here</a></li><li><a href="../paths.html">Learning lines</a></li><li><a href="../guides.html">Guides</a></li><li><a href="../videos.html">Video lessons</a></li><li><a href="../glossary.html">AI glossary</a></li></ul></div>
+<div><h4>Resources</h4><ul><li><a href="../tools.html">AI tools directory</a></li><li><a href="../prompts.html">Prompt library</a></li><li><a href="../ai-readiness-quiz.html">Team readiness check</a></li><li><a href="../roi-calculator.html">Training ROI calculator</a></li><li><a href="../contests.html">Contests</a></li></ul></div>
+<div><h4>Work with us</h4><ul><li><a href="../teams.html">Team training</a></li><li><a href="../advertise.html">Advertise & sponsor</a></li><li><a href="../support.html">Support / donate</a></li><li><a href="../careers.html">Careers & contributors</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+<div><h4>About</h4><ul><li><a href="../about.html">About AiTrain</a></li><li><a href="../editorial-standards.html">Editorial standards</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../cookies.html">Cookie policy</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../affiliate-disclosure.html">Affiliate disclosure</a></li><li><a href="../trademark-copyright.html">Trademark & copyright</a></li></ul></div>
+</div>
+<div class="fine">© <span id="yr">2026</span> AiTrain.com. Original content; all rights reserved. AiTrain is an independent educational publication and is not affiliated with or endorsed by any AI company, transit operator or training provider named on this site. Third-party names are used for identification only. <a href="../trademark-copyright.html">Trademark &amp; copyright notice</a>. Interested in this domain, sponsorship, advertising or partnership? <a href="https://web.works/contact" target="_blank" rel="noopener">web.works/contact</a>.</div>
+</div></footer>
+<div class="cookie" role="dialog" aria-label="Cookie choices"><b>Cookies on AiTrain.</b> We and our advertising partner Google use cookies to show ads, measure performance and remember your settings. See our <a href="../cookies.html">cookie policy</a>.
+<div class="btn-row"><button class="btn" data-consent="all">Accept all</button><button class="btn ghost" data-consent="essential">Essential only</button></div></div>
+<button class="btn ghost to-top" type="button" aria-label="Back to top">Top</button>
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

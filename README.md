@@ -32,6 +32,6 @@ Guides live in `_src/guides/*.md` (`=== slug | title | category | minutes | desc
 
 ## Hosting
 
-GitHub Pages → Deploy from branch → `main` / root. Custom domain `aitrain.com` (CNAME file included): point DNS A records to 185.199.108.153, .109.153, .110.153, .111.153 and `www` CNAME to `webworksa1.github.io`, then enable "Enforce HTTPS".
+GitHub Pages → Deploy from branch → `main` / root. After editing `_src/`, run the build and commit the regenerated HTML. Custom domain `aitrain.com` (CNAME file included): point DNS A records to 185.199.108.153, .109.153, .110.153, .111.153 and `www` CNAME to `webworksa1.github.io`, then enable "Enforce HTTPS".
 
 See `PROMPTS.md` for the phase-wise build prompts.

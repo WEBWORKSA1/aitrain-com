@@ -1,0 +1,15 @@
+{
+ "name": "AiTrain",
+ "short_name": "AiTrain",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#F4F6F9",
+ "theme_color": "#1652F0",
+ "icons": [
+  {
+   "src": "/assets/img/favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}
